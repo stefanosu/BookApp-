@@ -20,7 +20,10 @@ class BooksController < ApplicationController
     
     
     def update
-        book = Book.update 
+        # debugger
+        book = Book.find_by(id: params[:id])
+        book = book.update(book_params)
+        render json: book
         
     end
 
